@@ -1,0 +1,61 @@
+db.setdata("CREATE TABLE IF NOT EXISTS UserManager(
+		id integer primary key autoincrement,
+		username text,
+		password text,
+		updated_on text,
+		dated_on text,
+		timestamp text)");
+
+db.setdata("CREATE TABLE IF NOT EXISTS YEARSESSION(
+		id integer primary key autoincrement,
+		yearsessionName text,
+		updated_on text,
+		dated_on text,
+		timestamp text)");
+
+db.setdata("CREATE TABLE IF NOT EXISTS StandardSection(
+		id integer primary key autoincrement,
+		yearsessionName text,
+		stdsection text,
+		updated_on text,
+		dated_on text,
+		timestamp text)");
+
+db.setdata("CREATE TABLE IF NOT EXISTS Student(
+		id integer primary key autoincrement,
+		yearsessionName text,
+		stdsection text,
+		Rollno text,
+		fullname text,
+		contact text,
+		address text,
+		updated_on text,
+		dated_on text,
+		timestamp text)");
+
+db.setdata("CREATE TABLE IF NOT EXISTS Stock(
+		id integer primary key autoincrement,
+		yearsessionName text,
+		stdsection text,
+		Stockname text,
+		price text,
+		remainQuantity text,
+		soldquantity text,
+		updated_on text,
+		dated_on text,
+		timestamp text)");
+
+db.setdata("CREATE TABLE IF NOT EXISTS basket(
+		id integer primary key autoincrement,
+		yearsessionName text,
+		stdsection text,
+		Stockname text,
+		price text,
+		Quantity text,
+		BasketName text,
+		updated_on text,
+		dated_on text,
+		timestamp text)");
+
+
+    

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="fpane" prefHeight="1000.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClassStd.Stock.FXMLStockController">
+   <children>
+      <VBox layoutX="7.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <TextField fx:id="txtSearch" prefHeight="25.0" prefWidth="430.0" promptText="Search/Filter" />
+                  <Label fx:id="txtyearsession" onMouseClicked="#ActionLoadYearSession" style="-fx-background-color: #0fb2b8;" text="0000-000" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="txtstdsection" onMouseClicked="#actionLoadClassDashboard" style="-fx-background-color: #0fc0c5;" text="STD 1-C" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label onMouseClicked="#ActionLogout" prefHeight="40.0" style="-fx-background-color: red;" text="LOGOUT" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <BorderPane prefHeight="900.0" prefWidth="200.0">
+               <center>
+                  <TableView fx:id="tbStock" onKeyReleased="#actionTbKeyReleased" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="tbStockId" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="tbStockName" prefWidth="219.0" text="Stock Name" />
+                        <TableColumn fx:id="tbStockPrice" prefWidth="146.0" text="Price" />
+                        <TableColumn fx:id="tbStockSold" prefWidth="140.0" text="Sold Quantity" />
+                        <TableColumn fx:id="tbStockRemain" prefWidth="197.0" text="Remain Quantity" />
+                    </columns>
+                  </TableView>
+               </center>
+               <right>
+                  <AnchorPane prefHeight="200.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                           <children>
+                              <Label text="STOCK">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtStockName" promptText="Stock Name" />
+                              <TextField fx:id="txtStockPrice" promptText="Stock Price" />
+                              <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <Button fx:id="btnnReset" mnemonicParsing="false" onAction="#ActionReset" prefHeight="25.0" prefWidth="98.0" text="Reset" />
+                                    <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#actionAddStock" prefHeight="25.0" prefWidth="98.0" text="Add" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="txtAdditionalQuantity" prefHeight="25.0" prefWidth="214.0" promptText="Add Additional Quantity" />
+                                    <Button fx:id="btnaddAdditionalQuantity" mnemonicParsing="false" onAction="#actionAddAdditionalStockQuantity" prefHeight="25.0" prefWidth="98.0" text="Update" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="11.0" prefWidth="320.0" spacing="10.0">
+                                 <children>
+                                    <Label text="Remaining Stock Quantity">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="txtRemainQuantity" prefHeight="25.0" prefWidth="214.0" promptText="Remaining Stock Quantity" />
+                                    <Button fx:id="btnUpdateRemainQty" mnemonicParsing="false" onAction="#ActionUpdateRemainQty" prefHeight="25.0" prefWidth="98.0" text="Update" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="13.0" prefWidth="320.0" spacing="10.0">
+                                 <children>
+                                    <Label text="Sold Stock Quantity">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <TextField fx:id="txtSoldQuantity" prefHeight="25.0" prefWidth="214.0" promptText="Sold Stock Quantity" />
+                                    <Button fx:id="btnUpdateSoldQty" mnemonicParsing="false" onAction="#ActionUpdateSoldQty" prefHeight="25.0" prefWidth="98.0" text="Update" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </right>
+            </BorderPane>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

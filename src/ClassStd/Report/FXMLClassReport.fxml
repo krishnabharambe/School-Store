@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="fpane" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClassStd.Report.FXMLClassReportController">
+   <children>
+      <VBox layoutX="59.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <Label text="GENERATE REPORT OF CLASS : - ">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txtyearsession" onMouseClicked="#ActionLoadYearSession" style="-fx-background-color: #0fb2b8;" text="0000-000" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="txtstdsection" onMouseClicked="#actionLoadClassDashboard" style="-fx-background-color: #0fc0c5;" text="STD 1-C" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label onMouseClicked="#ActionLogout" prefHeight="40.0" style="-fx-background-color: red;" text="LOGOUT" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER">
+               <children>
+                  <VBox prefHeight="394.0" prefWidth="1180.0">
+                     <children>
+                        <Label text="Set Basket Price :">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="357.0" prefWidth="1180.0">
+                           <children>
+                              <AnchorPane prefHeight="357.0" prefWidth="244.0">
+                                 <children>
+                                    <Label layoutX="20.0" layoutY="16.0" text="List Of Existing Basket">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="tbBasketNames" layoutX="14.0" layoutY="60.0" onKeyReleased="#actionTbkeyReleased" prefHeight="287.0" prefWidth="200.0">
+                                      <columns>
+                                        <TableColumn fx:id="tbcolbasketname" prefWidth="199.0" text="Basket Name" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="357.0" prefWidth="312.0">
+                                 <children>
+                                    <VBox layoutX="70.0" layoutY="50.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label text="List Of Existing Basket">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Basket Name :">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtBasketName" editable="false" />
+                                          <Label text="Basket Price :">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtBasketPrice" />
+                                          <HBox prefHeight="47.0" prefWidth="292.0" spacing="10.0">
+                                             <children>
+                                                <Button fx:id="btnsubmit" mnemonicParsing="false" onAction="#actionsubmit" prefHeight="25.0" prefWidth="97.0" text="Submit" />
+                                                <Button mnemonicParsing="false" onAction="#actionReset" prefHeight="25.0" prefWidth="85.0" text="Reset" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" right="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <TableView fx:id="tbbasketvalue" prefHeight="357.0" prefWidth="491.0">
+                                <columns>
+                                  <TableColumn fx:id="tbcolbname" prefWidth="297.0" text="Baskett Name" />
+                                  <TableColumn fx:id="tbcolbprice" prefWidth="177.0" text="Price" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" />
+   </padding>
+</AnchorPane>
