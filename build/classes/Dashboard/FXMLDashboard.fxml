@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="fdashboard" prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dashboard.FXMLDashboardController">
+   <children>
+      <VBox alignment="CENTER" layoutX="343.0" layoutY="148.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="UNIQUE STUDENT STORE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <VBox alignment="CENTER" onMouseClicked="#ActionLoadSales" prefHeight="200.0" prefWidth="250.0" spacing="10.0" style="-fx-background-color: #f23030;">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" iconName="OUTDENT" onMouseClicked="#ActionLoadSales" size="3em" />
+                              <Label onMouseClicked="#ActionLoadSales" text="SALES" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <VBox alignment="CENTER" onMouseClicked="#actionLoadPRofile" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: #ff4c23;">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" iconName="COGS" size="3em" />
+                              <Label text="Profile" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <VBox alignment="CENTER" onMouseClicked="#ActionLogout" prefHeight="200.0" prefWidth="250.0" spacing="10.0" style="-fx-background-color: #0fb2b8;">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" iconName="POWER_OFF" onMouseClicked="#ActionLogout" size="3em" />
+                              <Label onMouseClicked="#ActionLogout" text="LOGOUT" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
